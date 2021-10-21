@@ -1,10 +1,17 @@
 package com.upgradehub.loja.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "client")
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Client {
     @Id
     @GeneratedValue(strategy =GenerationType.AUTO)
