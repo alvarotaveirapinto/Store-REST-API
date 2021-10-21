@@ -1,5 +1,7 @@
 package com.upgradehub.loja.model;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -8,6 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "sales")
+@Builder
 public class Sales {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
