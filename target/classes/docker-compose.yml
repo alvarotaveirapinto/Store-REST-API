@@ -5,7 +5,7 @@ services:
     ports:
       - "33001:3306"
     environment:
-      MYSQL_USER: user
+      MYSQL_USER: root
       MYSQL_PASSWORD: Alvaro987!
       MYSQL_ROOT_PASSWORD: Alvaro987!
-      MYSQL_DATABASE: storeproject
+      MYSQL_DATABASE: shelter
