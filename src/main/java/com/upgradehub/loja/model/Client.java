@@ -1,6 +1,7 @@
 package com.upgradehub.loja.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -11,8 +12,8 @@ public class Client {
     private String name;
     private int age;
 
-    @OneToMany
-    private Product product;
+    @OneToMany(mappedBy = "client")
+    private List<Sales> sales;
 
     public Client(Long id, String name, int age) {
         Id = id;

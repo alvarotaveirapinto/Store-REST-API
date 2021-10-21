@@ -1,6 +1,7 @@
 package com.upgradehub.loja.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -11,6 +12,10 @@ public class Product {
 
     private String name;
     private int price;
+
+    @ManyToMany(mappedBy = "products")
+    private List<Sales> salesList;
+
 
     public Product(Long id, String name, int price) {
         Id = id;

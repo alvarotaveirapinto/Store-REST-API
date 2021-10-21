@@ -2,6 +2,7 @@ package com.upgradehub.loja.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,8 +16,17 @@ public class Sales {
 
     private LocalDate localDate;
 
+    @ManyToOne
+    @JoinColumn(name = "id_client")
+    private Client client;
+
     @ManyToMany
-    private Product product;
+    @JoinTable(
+            name = "sales-products" ,
+            joinColumns =  @JoinColumn(name = "id_sales", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id"))
+    List<Product> products = new ArrayList<Product>();
+
 
     public Sales(Long id, List<Product> productList, LocalDate localDate) {
         Id = id;
