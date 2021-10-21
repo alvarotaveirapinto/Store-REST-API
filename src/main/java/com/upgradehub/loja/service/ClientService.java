@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ClientService {
-    @Autowired
-    private final ClientRepository clientRepository;
+
+    private ClientRepository clientRepository;
 
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
