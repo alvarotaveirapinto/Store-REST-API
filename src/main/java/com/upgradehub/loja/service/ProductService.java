@@ -29,11 +29,17 @@ public class ProductService {
     }
 
     //Save product
-
     public Product addProduct(NewProductRQ product){
         Product newProduct = Product.builder().name(product.getName()).price(product.getPrice()).build();
         productRepository.save(newProduct);
         return newProduct;
+    }
+
+    //Update product
+    public Product updatePrice(Long id, Long Price) {
+        Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFound("Product doesn't exists."));
+        product.setPrice(Price);
+        return productRepository.save(product);
     }
 
     //Delete by Id

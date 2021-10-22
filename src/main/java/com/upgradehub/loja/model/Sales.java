@@ -20,6 +20,8 @@ public class Sales {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
+    private List<Product> productList;
+
     private LocalDate localDate;
 
     @ManyToOne
@@ -28,17 +30,17 @@ public class Sales {
 
     @ManyToMany
     @JoinTable(
-            name = "sales-products",
-            joinColumns = @JoinColumn(name = "id_sales", referencedColumnName = "id"),
+            name = "sales-products" ,
+            joinColumns =  @JoinColumn(name = "id_sales", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id"))
-            private List<Product> products;
+    List<Product> products = new ArrayList<Product>();
 
 
-//    public Sales(Long id, List<Product> products, LocalDate localDate) {
-//        Id = id;
-//        this.products = products;
-//        this.localDate = localDate;
-//    }
+    public Sales(Long id, List<Product> productList, LocalDate localDate) {
+        Id = id;
+        this.productList = productList;
+        this.localDate = localDate;
+    }
 
     public Long getId() {
         return Id;
@@ -48,20 +50,12 @@ public class Sales {
         Id = id;
     }
 
-    public Client getClient() {
-        return client;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
     public LocalDate getLocalDate() {
