@@ -27,7 +27,7 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="cc785739-51b5-44ff-89a2-866cb7e58050">
+    <connection id="12496acc-5db9-453c-a2e2-0f86ffc6cb92">
       <console name="Connection" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
@@ -35,7 +35,7 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="cc785739-51b5-44ff-89a2-866cb7e58050" />
+    <connection id="12496acc-5db9-453c-a2e2-0f86ffc6cb92" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -63,7 +63,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="cc785739-51b5-44ff-89a2-866cb7e58050" active="true">
+      <connection id="12496acc-5db9-453c-a2e2-0f86ffc6cb92" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -75,11 +75,11 @@
           <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
-          <port value="33000" />
-          <database value="mysql" />
+          <port value="3307" />
+          <database value="storeproject" />
           <type value="USER_PASSWORD" />
-          <user value="root" />
-          <deprecated-pwd value="QWx2YXJvOTg3IQ==" />
+          <user value="user" />
+          <deprecated-pwd value="cGFzcw==" />
         </database>
         <properties>
           <auto-commit value="false" />
