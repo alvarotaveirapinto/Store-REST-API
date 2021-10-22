@@ -2,33 +2,41 @@
 
 Springboot project with MySQL database using Docker connection.
 
-##Model
+## Model
 
 -Sale - Relation one to many with "Product"
+
 -Product 
+
 -Client - Relation many to many with "Product"
 
-##Controller
+## Controller
 
 -Sale - Post sale/Get by client name
+
 -Product - Get all/get by ID/Post product/Update price/Delete by id
+
 -Client -Get all/Get by ID/Create client
 
-##Service
+## Service
 
 -Sale
+
 -Product
+
 -Client
 
-##Exceptions
+## Exceptions
 
 -ClientNotFound
 -ProductNotFound
 
-##Requests
+## Requests
 
 -NewProductRQ
+
 -SalesRQ
+
 -UpdateProductRQ
 
 
