@@ -29,6 +29,7 @@ Springboot project with MySQL database using Docker connection.
 ## Exceptions
 
 -ClientNotFound
+
 -ProductNotFound
 
 ## Requests
