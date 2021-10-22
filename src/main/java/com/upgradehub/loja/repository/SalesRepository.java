@@ -11,5 +11,5 @@ import java.util.Optional;
 @Repository
 @Primary
 public interface SalesRepository extends JpaRepository<Sales, Long> {
-    Optional<Sales> getSalesByClient(String name);
+    Optional<Sales> getSalesByClientName(String name);
 }

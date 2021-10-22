@@ -4,7 +4,6 @@ import com.upgradehub.loja.exception.ClientNotFoundException;
 import com.upgradehub.loja.model.Client;
 import com.upgradehub.loja.service.ClientService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

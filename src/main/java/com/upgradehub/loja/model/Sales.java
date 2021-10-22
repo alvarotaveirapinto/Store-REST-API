@@ -1,8 +1,7 @@
 package com.upgradehub.loja.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,9 +11,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "sales")
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Sales {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,53 +23,24 @@ public class Sales {
 
     private LocalDate localDate;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "id_client")
     private Client client;
 
-    @ManyToMany
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "sales-products",
-            joinColumns = @JoinColumn(name = "id_sales", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "id_product", referencedColumnName = "id"))
-            private List<Product> products;
+            name = "sales_products",
+            joinColumns = @JoinColumn(name = "sales_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> products;
 
 
-//    public Sales(Long id, List<Product> products, LocalDate localDate) {
-//        Id = id;
-//        this.products = products;
-//        this.localDate = localDate;
-//    }
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
+    public Sales(Long id, List<Product> products, LocalDate localDate) {
         Id = id;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
         this.products = products;
-    }
-
-    public LocalDate getLocalDate() {
-        return localDate;
-    }
-
-    public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
     }
+
 }
